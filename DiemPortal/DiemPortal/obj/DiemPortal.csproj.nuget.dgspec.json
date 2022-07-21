@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\furka\\Desktop\\Diem\\DiemPortal\\DiemPortal\\DiemPortal.csproj": {}
+    "C:\\Users\\furka\\Desktop\\DiemPortal\\DiemPortal\\DiemPortal.csproj": {}
   },
   "projects": {
-    "C:\\Users\\furka\\Desktop\\Diem\\DiemPortal\\DiemPortal\\DiemPortal.csproj": {
+    "C:\\Users\\furka\\Desktop\\DiemPortal\\DiemPortal\\DiemPortal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\furka\\Desktop\\Diem\\DiemPortal\\DiemPortal\\DiemPortal.csproj",
+        "projectUniqueName": "C:\\Users\\furka\\Desktop\\DiemPortal\\DiemPortal\\DiemPortal.csproj",
         "projectName": "DiemPortal",
-        "projectPath": "C:\\Users\\furka\\Desktop\\Diem\\DiemPortal\\DiemPortal\\DiemPortal.csproj",
+        "projectPath": "C:\\Users\\furka\\Desktop\\DiemPortal\\DiemPortal\\DiemPortal.csproj",
         "packagesPath": "C:\\Users\\furka\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\furka\\Desktop\\Diem\\DiemPortal\\DiemPortal\\obj\\",
+        "outputPath": "C:\\Users\\furka\\Desktop\\DiemPortal\\DiemPortal\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
