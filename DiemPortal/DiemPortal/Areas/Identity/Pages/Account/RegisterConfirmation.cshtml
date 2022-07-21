@@ -1,0 +1,23 @@
+﻿@page
+@model RegisterConfirmationModel
+@{
+    ViewData["Title"] = "E-Posta adresinizi doğrulayınız.";
+}
+
+<h2>@ViewData["Title"]</h2>
+@{
+    if (@Model.DisplayConfirmAccountLink)
+    {
+<p>
+    Bu site e-posta doğrulaması içermiyor. 
+     <a id="confirm-link" href="@Model.EmailConfirmationUrl">Hesabınızı doğrulamak için tıklayınız.</a>
+</p>
+    }
+    else
+    {
+<p>
+        E-Posta adresinizi doğrulayınız.
+</p>
+    }
+}
+
