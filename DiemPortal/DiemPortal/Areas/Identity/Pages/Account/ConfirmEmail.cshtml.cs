@@ -16,7 +16,7 @@ namespace DiemPortal.Areas.Identity.Pages.Account
 {
     public class ConfirmEmailModel : PageModel
     {
-        private readonly UserManager<UserDetails> _userManager;
+        private readonly UserManager<IdentityUser> _userManager;
 
         public ConfirmEmailModel(UserManager<IdentityUser> userManager)
         {
