@@ -1,14 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.2.32616.157
+VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiemPortal", "DiemPortal\DiemPortal.csproj", "{386C25C5-B908-4B16-9B35-7C3998F48213}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3B46CD7B-E747-4D82-AAFF-724B0AE8259E}"
-	ProjectSection(SolutionItems) = preProject
-		.editorconfig = .editorconfig
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiemPortal", "DiemPortal\DiemPortal.csproj", "{56013D3C-D268-4FF0-8DED-012D4AE05AEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{386C25C5-B908-4B16-9B35-7C3998F48213}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{386C25C5-B908-4B16-9B35-7C3998F48213}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{386C25C5-B908-4B16-9B35-7C3998F48213}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{386C25C5-B908-4B16-9B35-7C3998F48213}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56013D3C-D268-4FF0-8DED-012D4AE05AEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56013D3C-D268-4FF0-8DED-012D4AE05AEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56013D3C-D268-4FF0-8DED-012D4AE05AEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56013D3C-D268-4FF0-8DED-012D4AE05AEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7539ADCE-C7BD-46E4-991B-D861CFAFED38}
+		SolutionGuid = {2026A0F0-592A-4118-8406-EBD9259CF680}
 	EndGlobalSection
 EndGlobal

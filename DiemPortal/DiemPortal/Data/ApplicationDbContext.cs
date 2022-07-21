@@ -10,6 +10,6 @@ namespace DiemPortal.Data
             : base(options)
         {
         }
-        public DbSet<Project> Projects { get; set; }
+        public DbSet<UserDetails> UserDetails { get; set; }
     }
 }

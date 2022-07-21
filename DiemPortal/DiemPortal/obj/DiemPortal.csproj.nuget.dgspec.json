@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\furka\\Downloads\\DiemPortal\\DiemPortal\\DiemPortal.csproj": {}
+    "C:\\Users\\furka\\Desktop\\Diem\\DiemPortal\\DiemPortal\\DiemPortal.csproj": {}
   },
   "projects": {
-    "C:\\Users\\furka\\Downloads\\DiemPortal\\DiemPortal\\DiemPortal.csproj": {
+    "C:\\Users\\furka\\Desktop\\Diem\\DiemPortal\\DiemPortal\\DiemPortal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\furka\\Downloads\\DiemPortal\\DiemPortal\\DiemPortal.csproj",
+        "projectUniqueName": "C:\\Users\\furka\\Desktop\\Diem\\DiemPortal\\DiemPortal\\DiemPortal.csproj",
         "projectName": "DiemPortal",
-        "projectPath": "C:\\Users\\furka\\Downloads\\DiemPortal\\DiemPortal\\DiemPortal.csproj",
+        "projectPath": "C:\\Users\\furka\\Desktop\\Diem\\DiemPortal\\DiemPortal\\DiemPortal.csproj",
         "packagesPath": "C:\\Users\\furka\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\furka\\Downloads\\DiemPortal\\DiemPortal\\obj\\",
+        "outputPath": "C:\\Users\\furka\\Desktop\\Diem\\DiemPortal\\DiemPortal\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -61,8 +61,6 @@
               "version": "[6.0.7, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.7, )"
             },

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/N6vVBl5PLSY+DkAqLp6DJCA3oFU358Dh20bdxRKtoQ+PwBFCoijait0ieUvVOqlitgoZW0Avc6OVfd4YAiubg==",
+  "dgSpecHash": "L8XJ8qGByIbgx3zqzoI7uHeLXPryd7quuNDzevt9v8fRIGwClzAeNQIqa5nGsTTCbCV0MShq9z5UrgrCaS/QMg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\furka\\Downloads\\DiemPortal\\DiemPortal\\DiemPortal.csproj",
+  "projectFilePath": "C:\\Users\\furka\\Desktop\\Diem\\DiemPortal\\DiemPortal\\DiemPortal.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\furka\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\furka\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
