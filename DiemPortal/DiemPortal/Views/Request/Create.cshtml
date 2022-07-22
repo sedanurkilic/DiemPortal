@@ -1,0 +1,63 @@
+﻿@model DiemPortal.Models.Request
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Request</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ProjectId" class="control-label"></label>
+                <input asp-for="ProjectId" class="form-control" />
+                <span asp-validation-for="ProjectId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Birim" class="control-label"></label>
+                <input asp-for="Birim" class="form-control" />
+                <span asp-validation-for="Birim" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Miktar" class="control-label"></label>
+                <input asp-for="Miktar" class="form-control" />
+                <span asp-validation-for="Miktar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Marka" class="control-label"></label>
+                <input asp-for="Marka" class="form-control" />
+                <span asp-validation-for="Marka" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CoPozu" class="control-label"></label>
+                <input asp-for="CoPozu" class="form-control" />
+                <span asp-validation-for="CoPozu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TerminTarihi" class="control-label"></label>
+                <input asp-for="TerminTarihi" class="form-control" />
+                <span asp-validation-for="TerminTarihi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AltYuklenici" class="control-label"></label>
+                <input asp-for="AltYuklenici" class="form-control" />
+                <span asp-validation-for="AltYuklenici" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -4,6 +4,7 @@ using DiemPortal.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DiemPortal.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220722123112_controllersAdded")]
+    partial class controllersAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -93,10 +95,15 @@ namespace DiemPortal.Data.Migrations
                     b.Property<int>("ProjectId")
                         .HasColumnType("int");
 
+                    b.Property<int>("SevkAdresiAddressId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("TerminTarihi")
                         .HasColumnType("datetime2");
 
                     b.HasKey("RequestId");
+
+                    b.HasIndex("SevkAdresiAddressId");
 
                     b.ToTable("Request");
                 });
@@ -314,6 +321,17 @@ namespace DiemPortal.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("DiemPortal.Models.Request", b =>
+                {
+                    b.HasOne("DiemPortal.Models.Address", "SevkAdresi")
+                        .WithMany()
+                        .HasForeignKey("SevkAdresiAddressId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("SevkAdresi");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
