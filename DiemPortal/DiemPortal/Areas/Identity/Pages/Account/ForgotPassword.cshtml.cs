@@ -45,6 +45,7 @@ namespace DiemPortal.Areas.Identity.Pages.Account
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [Required]
+            [Display(Name = "E-posta")]
             [EmailAddress]
             public string Email { get; set; }
         }
@@ -72,8 +73,8 @@ namespace DiemPortal.Areas.Identity.Pages.Account
 
                 await _emailSender.SendEmailAsync(
                     Input.Email,
-                    "Reset Password",
-                    $"Please reset your password by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                    "Şifreyi Sıfırla",
+                    $"Lütfen şifrenizi sıfırlamak için <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>buraya tıklayın</a>.");
 
                 return RedirectToPage("./ForgotPasswordConfirmation");
             }

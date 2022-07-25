@@ -82,6 +82,7 @@ namespace DiemPortal.Areas.Identity.Pages.Account
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [Required]
+            [Display(Name ="E-posta")]
             [EmailAddress]
             public string Email { get; set; }
         }
@@ -107,7 +108,7 @@ namespace DiemPortal.Areas.Identity.Pages.Account
             var info = await _signInManager.GetExternalLoginInfoAsync();
             if (info == null)
             {
-                ErrorMessage = "Error loading external login information.";
+                ErrorMessage = "Giriş bilgileri hatalı.";
                 return RedirectToPage("./Login", new { ReturnUrl = returnUrl });
             }
 
