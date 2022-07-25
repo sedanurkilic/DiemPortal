@@ -77,8 +77,7 @@ namespace DiemPortal.Areas.Identity.Pages.Account
             [Required]
             [EmailAddress]
             [Display(Name = "E-Posta")]
-            [RegularExpression(@"^[a-zA-Z0-9._%+-]+(@diem\.com\.tr|@diem\.com)$", ErrorMessage = "Yalnızca Diem uzantılı mail ile kayıt olabilirsiniz.")]
-
+            [RegularExpression(@"^[a-zA-Z0-9._%+-]+(@diem\.com\.tr|@diem\.com)$", ErrorMessage = "Yalnızca diem uzantılı mail ile kayıt olunabilir.")]
             public string Email { get; set; }
 
             /// <summary>
@@ -86,7 +85,7 @@ namespace DiemPortal.Areas.Identity.Pages.Account
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [Required]
-            [StringLength(100, ErrorMessage = "Şifreniz en az 6 karakter olmalıdır.", MinimumLength = 6)]
+            [StringLength(100, ErrorMessage = "Şifre en az 6 hane olmalıdır", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "Şifre")]
             public string Password { get; set; }

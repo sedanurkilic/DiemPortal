@@ -11,9 +11,6 @@ namespace DiemPortal.Models
         [Display(Name = "Talebiniz")]
         [Required(ErrorMessage = "Talep Giriniz")]
         public string RequestInfo { get; set; }
-        [Display(Name = "Proje PO No")]
-        [Required(ErrorMessage = "Proje PO No Giriniz")]
-        public int ProjectId { get; set; }
         [Display(Name = "Birim")]
         public string Unit { get; set; }
         [Display(Name = "Miktar")]
