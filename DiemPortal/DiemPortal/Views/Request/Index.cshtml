@@ -13,25 +13,28 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.RequestInfo)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.ProjectId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Birim)
+                @Html.DisplayNameFor(model => model.Unit)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Miktar)
+                @Html.DisplayNameFor(model => model.Amount)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Marka)
+                @Html.DisplayNameFor(model => model.Brand)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CoPozu)
+                @Html.DisplayNameFor(model => model.CoNo)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TerminTarihi)
+                @Html.DisplayNameFor(model => model.DeadLine)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AltYuklenici)
+                @Html.DisplayNameFor(model => model.SubContractor)
             </th>
             <th></th>
         </tr>
@@ -40,25 +43,28 @@
 @foreach (var item in Model) {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.RequestInfo)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.ProjectId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Birim)
+                @Html.DisplayFor(modelItem => item.Unit)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Miktar)
+                @Html.DisplayFor(modelItem => item.Amount)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Marka)
+                @Html.DisplayFor(modelItem => item.Brand)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CoPozu)
+                @Html.DisplayFor(modelItem => item.CoNo)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TerminTarihi)
+                @Html.DisplayFor(modelItem => item.DeadLine)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.AltYuklenici)
+                @Html.DisplayFor(modelItem => item.SubContractor)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.RequestId">Edit</a> |
