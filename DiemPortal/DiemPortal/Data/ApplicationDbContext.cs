@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DiemPortal.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -14,6 +14,5 @@ namespace DiemPortal.Data
         public DbSet<Supplier> Supplier { get; set; }
         public DbSet<Address> Address { get; set; }
         public DbSet<Project> Project { get; set; }
-
     }
 }
