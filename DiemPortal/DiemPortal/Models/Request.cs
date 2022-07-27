@@ -26,8 +26,14 @@ namespace DiemPortal.Models
         [Required(ErrorMessage = "Alt Yüklenici Giriniz")]
         [Display(Name = "Alt Yüklenici")]
         public string SubContractor { get; set; }
+        [Display(Name = "Talep Türü")]
+        [EnumDataType(typeof(RequestType))]
+        public RequestType RequestType { get; set; }
         //public Address SevkAdresi { get; set; } //hangi sevk adresi
         //public List<Tedarikci> Tedarikciler { get; set; }
-        //public List<string> talepTuru{get;set;
+    }
+    public enum RequestType
+    {
+        Malzeme,Makine,İşçilik
     }
 }

@@ -56,7 +56,7 @@ namespace DiemPortal.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("RequestId,RequestInfo,Unit,Amount,Brand,CoNo,DeadLine,SubContractor")] Request request)
+        public async Task<IActionResult> Create([Bind("RequestId,RequestInfo,Unit,Amount,Brand,CoNo,DeadLine,SubContractor,RequestType")] Request request)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +88,7 @@ namespace DiemPortal.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("RequestId,RequestInfo,Unit,Amount,Brand,CoNo,DeadLine,SubContractor")] Request request)
+        public async Task<IActionResult> Edit(int id, [Bind("RequestId,RequestInfo,Unit,Amount,Brand,CoNo,DeadLine,SubContractor,RequestType")] Request request)
         {
             if (id != request.RequestId)
             {
