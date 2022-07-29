@@ -808,3 +808,8 @@ C:\Users\furka\Desktop\DiemPortal\DiemPortal\obj\Debug\net6.0\refint\DiemPortal.
 C:\Users\furka\Desktop\DiemPortal\DiemPortal\obj\Debug\net6.0\DiemPortal.pdb
 C:\Users\furka\Desktop\DiemPortal\DiemPortal\obj\Debug\net6.0\DiemPortal.genruntimeconfig.cache
 C:\Users\furka\Desktop\DiemPortal\DiemPortal\obj\Debug\net6.0\ref\DiemPortal.dll
+C:\Users\furka\Desktop\DiemPortal\DiemPortal\bin\Debug\net6.0\AdminLTE-3.0.4\composer.json
+C:\Users\furka\Desktop\DiemPortal\DiemPortal\bin\Debug\net6.0\AdminLTE-3.0.4\package-lock.json
+C:\Users\furka\Desktop\DiemPortal\DiemPortal\bin\Debug\net6.0\AdminLTE-3.0.4\package.json
+C:\Users\furka\Desktop\DiemPortal\DiemPortal\bin\Debug\net6.0\AdminLTE-3.0.4\plugins\daterangepicker\bower.json
+C:\Users\furka\Desktop\DiemPortal\DiemPortal\bin\Debug\net6.0\AdminLTE-3.0.4\plugins\raphael\bower.json

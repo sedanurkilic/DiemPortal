@@ -1,4 +1,5 @@
 ﻿using DiemPortal.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +15,7 @@ namespace DiemPortal.Controllers
             _roleManager = roleManager;
             _userManager = userManager;
         }
+        [Authorize(Roles = "İK")]
         public async Task<IActionResult> Index()
         {
             var users = await _userManager.Users.ToListAsync();
@@ -30,10 +32,12 @@ namespace DiemPortal.Controllers
             }
             return View(userRolesViewModel);
         }
+        [Authorize(Roles = "İK")]
         private async Task<List<string>> GetUserRoles(ApplicationUser user)
         {
             return new List<string>(await _userManager.GetRolesAsync(user));
         }
+        [Authorize(Roles = "İK")]
         public async Task<IActionResult> Manage(string userId)
         {
             ViewBag.userId = userId;
@@ -65,6 +69,7 @@ namespace DiemPortal.Controllers
             return View(model);
         }
         [HttpPost]
+        [Authorize(Roles = "İK")]
         public async Task<IActionResult> Manage(List<ManageUserRolesViewModel> model, string userId)
         {
             var user = await _userManager.FindByIdAsync(userId);

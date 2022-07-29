@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DiemPortal.Data;
 using DiemPortal.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DiemPortal.Controllers
 {
@@ -20,6 +21,7 @@ namespace DiemPortal.Controllers
         }
 
         // GET: Project
+        [Authorize(Roles ="Satınalma, Muhasebe, Yönetici, Şantiye Şefi")]
         public async Task<IActionResult> Index()
         {
               return _context.Project != null ? 
@@ -28,6 +30,7 @@ namespace DiemPortal.Controllers
         }
 
         // GET: Project/Details/5
+        [Authorize(Roles = "Satınalma, Muhasebe, Yönetici, Şantiye Şefi")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Project == null)
@@ -46,6 +49,7 @@ namespace DiemPortal.Controllers
         }
 
         // GET: Project/Create
+        [Authorize(Roles = "Satınalma, Muhasebe, Yönetici, Şantiye Şefi")]
         public IActionResult Create()
         {
             return View();
@@ -56,6 +60,7 @@ namespace DiemPortal.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Satınalma, Muhasebe, Yönetici, Şantiye Şefi")]
         public async Task<IActionResult> Create([Bind("ProjectId,ProjectName,ProjectTag,ProjectManager")] Project project)
         {
             if (ModelState.IsValid)
@@ -68,6 +73,7 @@ namespace DiemPortal.Controllers
         }
 
         // GET: Project/Edit/5
+        [Authorize(Roles = "Satınalma, Muhasebe, Yönetici, Şantiye Şefi")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Project == null)
@@ -88,6 +94,7 @@ namespace DiemPortal.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Satınalma, Muhasebe, Yönetici, Şantiye Şefi")]
         public async Task<IActionResult> Edit(int id, [Bind("ProjectId,ProjectName,ProjectTag,ProjectManager")] Project project)
         {
             if (id != project.ProjectId)
@@ -119,6 +126,7 @@ namespace DiemPortal.Controllers
         }
 
         // GET: Project/Delete/5
+        [Authorize(Roles = "Satınalma, Muhasebe, Yönetici, Şantiye Şefi")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Project == null)
@@ -139,6 +147,7 @@ namespace DiemPortal.Controllers
         // POST: Project/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Satınalma, Muhasebe, Yönetici, Şantiye Şefi")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Project == null)
@@ -154,7 +163,7 @@ namespace DiemPortal.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
+        [Authorize(Roles = "Satınalma, Muhasebe, Yönetici, Şantiye Şefi")]
         private bool ProjectExists(int id)
         {
           return (_context.Project?.Any(e => e.ProjectId == id)).GetValueOrDefault();

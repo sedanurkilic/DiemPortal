@@ -18,11 +18,6 @@ namespace DiemPortal.Controllers
         {
             return View();
         }
-        [Authorize(Roles ="admin")]
-        public IActionResult Privacy()
-        {
-            return View();
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
