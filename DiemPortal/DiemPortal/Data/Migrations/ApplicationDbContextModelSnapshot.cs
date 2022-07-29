@@ -36,7 +36,7 @@ namespace DiemPortal.Data.Migrations
 
                     b.HasKey("AddressId");
 
-                    b.ToTable("Address");
+                    b.ToTable("Address", (string)null);
                 });
 
             modelBuilder.Entity("DiemPortal.Models.ApplicationUser", b =>
@@ -132,7 +132,7 @@ namespace DiemPortal.Data.Migrations
 
                     b.HasKey("ProjectId");
 
-                    b.ToTable("Project");
+                    b.ToTable("Project", (string)null);
                 });
 
             modelBuilder.Entity("DiemPortal.Models.Request", b =>
@@ -173,7 +173,7 @@ namespace DiemPortal.Data.Migrations
 
                     b.HasKey("RequestId");
 
-                    b.ToTable("Request");
+                    b.ToTable("Request", (string)null);
                 });
 
             modelBuilder.Entity("DiemPortal.Models.Supplier", b =>
@@ -190,7 +190,7 @@ namespace DiemPortal.Data.Migrations
 
                     b.HasKey("SupplierId");
 
-                    b.ToTable("Supplier");
+                    b.ToTable("Supplier", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

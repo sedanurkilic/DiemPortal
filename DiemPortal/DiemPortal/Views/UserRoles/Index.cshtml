@@ -1,0 +1,32 @@
+﻿@using DiemPortal.Models
+@model List<DiemPortal.Models.UserRolesViewModel>
+@{
+    ViewData["Title"] = "Kullanıcılar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Kullanıcılar</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Ad</th>
+            <th>Soy Ad</th>
+            <th>E-Posta</th>
+            <th>Roller</th>
+            <th>Düzenle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+        <tr>
+            <td>@user.FirstName</td>
+            <td>@user.LastName</td>
+            <td>@user.Email</td>
+            <td>@string.Join(" , ", user.Roles.ToList())</td>
+            <td>
+                <a class="btn btn-primary" asp-controller="UserRoles" asp-action="Manage" asp-route-userId="@user.UserId">Rolleri Düzenle</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
