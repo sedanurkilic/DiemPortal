@@ -1,7 +1,7 @@
 ﻿@model DiemPortal.Models.Request
 
 @{
-    ViewData["Title"] = "Edit";
+	ViewData["Title"] = "Edit";
 }
 
 <h1>Edit</h1>
@@ -9,63 +9,73 @@
 <h4>Request</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="RequestId" />
-            <div class="form-group">
-                <label asp-for="RequestInfo" class="control-label"></label>
-                <input asp-for="RequestInfo" class="form-control" />
-                <span asp-validation-for="RequestInfo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Unit" class="control-label"></label>
-                <input asp-for="Unit" class="form-control" />
-                <span asp-validation-for="Unit" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Amount" class="control-label"></label>
-                <input asp-for="Amount" class="form-control" />
-                <span asp-validation-for="Amount" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Brand" class="control-label"></label>
-                <input asp-for="Brand" class="form-control" />
-                <span asp-validation-for="Brand" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CoNo" class="control-label"></label>
-                <input asp-for="CoNo" class="form-control" />
-                <span asp-validation-for="CoNo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DeadLine" class="control-label"></label>
-                <input asp-for="DeadLine" class="form-control" />
-                <span asp-validation-for="DeadLine" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SubContractor" class="control-label"></label>
-                <input asp-for="SubContractor" class="form-control" />
-                <span asp-validation-for="SubContractor" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="RequestType" class="control-label"></label>
-                <select asp-for="RequestType" asp-items="Html.GetEnumSelectList<RequestType>()" class="form-control">
-                    <option selected="selected" value="">Seçiniz...</option>
-                </select>
-                <span asp-validation-for="RequestType" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
+	<div class="col-md-4">
+		<form asp-action="Edit">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<input type="hidden" asp-for="RequestId" />
+
+			<div class="form-group">
+				<label asp-for="ProjectId" class="control-label">Proje</label>
+				<select asp-for="ProjectId" class="form-control" asp-items="ViewBag.ProjectId"></select>
+				<span asp-validation-for="ProjectId" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="RequestType" class="control-label"></label>
+				<select asp-for="RequestType" asp-items="Html.GetEnumSelectList<RequestType>()" class="form-control">
+					<option selected="selected" value="">Seçiniz...</option>
+				</select>
+				<span asp-validation-for="RequestType" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="RequestInfo" class="control-label"></label>
+				<input asp-for="RequestInfo" class="form-control" />
+				<span asp-validation-for="RequestInfo" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Unit" class="control-label"></label>
+				<input asp-for="Unit" class="form-control" />
+				<span asp-validation-for="Unit" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Amount" class="control-label"></label>
+				<input asp-for="Amount" class="form-control" />
+				<span asp-validation-for="Amount" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Brand" class="control-label"></label>
+				<input asp-for="Brand" class="form-control" />
+				<span asp-validation-for="Brand" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="CoNo" class="control-label"></label>
+				<input asp-for="CoNo" class="form-control" />
+				<span asp-validation-for="CoNo" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="DeadLine" class="control-label"></label>
+				<input asp-for="DeadLine" class="form-control" />
+				<span asp-validation-for="DeadLine" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="SubContractor" class="control-label"></label>
+				<input asp-for="SubContractor" class="form-control" />
+				<span asp-validation-for="SubContractor" class="text-danger"></span>
+			</div>
+
+
+			<div class="form-group">
+				<input type="submit" value="Save" class="btn btn-primary" />
+			</div>
+		</form>
+	</div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+	<a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+	}

@@ -59,6 +59,12 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.RequestType)
         </dd>
+        <dt class = "col-sm-2">
+            Proje
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.project.ProjectName)
+        </dd>
     </dl>
     
     <form asp-action="Delete">

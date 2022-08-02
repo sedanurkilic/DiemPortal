@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DiemPortal.Models
 {
@@ -12,11 +13,11 @@ namespace DiemPortal.Models
         [Required(ErrorMessage = "Talep Giriniz")]
         public string RequestInfo { get; set; }
         [Display(Name = "Birim")]
-        public string Unit { get; set; }
+        public string? Unit { get; set; }
         [Display(Name = "Miktar")]
-        public int Amount { get; set; }
+        public int? Amount { get; set; }
         [Display(Name = "Marka")]
-        public string Brand { get; set; }
+        public string? Brand { get; set; }
         [Required(ErrorMessage = "Co Pozunu Giriniz")]
         [Display(Name = "CO Pozu")]
         public int CoNo { get; set; }
@@ -25,11 +26,14 @@ namespace DiemPortal.Models
         public DateTime DeadLine { get; set; }
         [Required(ErrorMessage = "Alt Yüklenici Giriniz")]
         [Display(Name = "Alt Yüklenici")]
-        public string SubContractor { get; set; }
+        public string? SubContractor { get; set; }
         [Display(Name = "Talep Türü")]
         [EnumDataType(typeof(RequestType))]
         public RequestType RequestType { get; set; }
-        //public Address SevkAdresi { get; set; } //hangi sevk adresi
+        [ForeignKey("Project")]
+        public int ProjectId { get; set; }
+        public virtual Project? project { get; set; }
+        //public Address? Address { get; set; }
         //public List<Tedarikci> Tedarikciler { get; set; }
     }
     public enum RequestType

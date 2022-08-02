@@ -17,8 +17,9 @@ namespace DiemPortal.Models
         [Display(Name = "Proje Müdürü")]
         [Required(ErrorMessage = "Müdür Seçiniz")]
         public string ProjectManager { get; set; } //user yapılacak
+        public virtual List<Request>? Requests { get; set; }
+        public virtual List<Address>? Addresses { get; set; }
         //public List<string> Employees { get; set; } //List<user> yapılacak
         //public List<Talep> TalepListesi { get; set; }
-        //public List<Address> SevkAdresi { get; set; }
     }
 }

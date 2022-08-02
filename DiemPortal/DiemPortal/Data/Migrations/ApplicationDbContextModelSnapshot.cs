@@ -34,7 +34,12 @@ namespace DiemPortal.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("ProjectId")
+                        .HasColumnType("int");
+
                     b.HasKey("AddressId");
+
+                    b.HasIndex("ProjectId");
 
                     b.ToTable("Address", (string)null);
                 });
@@ -143,11 +148,10 @@ namespace DiemPortal.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RequestId"), 1L, 1);
 
-                    b.Property<int>("Amount")
+                    b.Property<int?>("Amount")
                         .HasColumnType("int");
 
                     b.Property<string>("Brand")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("CoNo")
@@ -155,6 +159,9 @@ namespace DiemPortal.Data.Migrations
 
                     b.Property<DateTime>("DeadLine")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("ProjectId")
+                        .HasColumnType("int");
 
                     b.Property<string>("RequestInfo")
                         .IsRequired()
@@ -168,10 +175,11 @@ namespace DiemPortal.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Unit")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("RequestId");
+
+                    b.HasIndex("ProjectId");
 
                     b.ToTable("Request", (string)null);
                 });
@@ -326,6 +334,28 @@ namespace DiemPortal.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("DiemPortal.Models.Address", b =>
+                {
+                    b.HasOne("DiemPortal.Models.Project", "Project")
+                        .WithMany("Addresses")
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Project");
+                });
+
+            modelBuilder.Entity("DiemPortal.Models.Request", b =>
+                {
+                    b.HasOne("DiemPortal.Models.Project", "project")
+                        .WithMany("Requests")
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("project");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -375,6 +405,13 @@ namespace DiemPortal.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("DiemPortal.Models.Project", b =>
+                {
+                    b.Navigation("Addresses");
+
+                    b.Navigation("Requests");
                 });
 #pragma warning restore 612, 618
         }
