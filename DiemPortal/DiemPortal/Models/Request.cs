@@ -12,29 +12,32 @@ namespace DiemPortal.Models
         [Display(Name = "Talebiniz")]
         [Required(ErrorMessage = "Talep Giriniz")]
         public string RequestInfo { get; set; }
+        [Display(Name = "Talep Türü")]
+        [EnumDataType(typeof(RequestType))]
+        [Required(ErrorMessage = "Talep Türünü Seçiniz")]
+        public RequestType RequestType { get; set; }
         [Display(Name = "Birim")]
         public string? Unit { get; set; }
         [Display(Name = "Miktar")]
-        public int? Amount { get; set; }
+        public decimal? Amount { get; set; }
         [Display(Name = "Marka")]
         public string? Brand { get; set; }
-        [Required(ErrorMessage = "Co Pozunu Giriniz")]
         [Display(Name = "CO Pozu")]
-        public int CoNo { get; set; }
+        public int? CoNo { get; set; }
+        [Display(Name = "Keşif Pozu")]
+        public int? DiscoveryNo { get; set; }
+        [DataType(DataType.Date)]
         [Required(ErrorMessage = "Termin Tarihi Giriniz")]
         [Display(Name = "Termin Tarihi")]
         public DateTime DeadLine { get; set; }
-        [Required(ErrorMessage = "Alt Yüklenici Giriniz")]
-        [Display(Name = "Alt Yüklenici")]
+        [Display(Name = "Yansıtılacak Alt Yüklenici")]
         public string? SubContractor { get; set; }
-        [Display(Name = "Talep Türü")]
-        [EnumDataType(typeof(RequestType))]
-        public RequestType RequestType { get; set; }
         [ForeignKey("Project")]
         public int ProjectId { get; set; }
         public virtual Project? project { get; set; }
+        [Display(Name = "Notlar")]
+        public string? Notes { get; set; }
         //public Address? Address { get; set; }
-        //public List<Tedarikci> Tedarikciler { get; set; }
     }
     public enum RequestType
     {

@@ -41,7 +41,7 @@ namespace DiemPortal.Data.Migrations
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("Address", (string)null);
+                    b.ToTable("Address");
                 });
 
             modelBuilder.Entity("DiemPortal.Models.ApplicationUser", b =>
@@ -123,6 +123,21 @@ namespace DiemPortal.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProjectId"), 1L, 1);
 
+                    b.Property<string>("CustomerAddress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CustomerName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("IbanEur")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("IbanTr")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("IbanUsd")
+                        .HasColumnType("int");
+
                     b.Property<string>("ProjectManager")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -135,9 +150,15 @@ namespace DiemPortal.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("TaxAdministration")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TaxNo")
+                        .HasColumnType("int");
+
                     b.HasKey("ProjectId");
 
-                    b.ToTable("Project", (string)null);
+                    b.ToTable("Project");
                 });
 
             modelBuilder.Entity("DiemPortal.Models.Request", b =>
@@ -148,17 +169,23 @@ namespace DiemPortal.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RequestId"), 1L, 1);
 
-                    b.Property<int?>("Amount")
-                        .HasColumnType("int");
+                    b.Property<decimal?>("Amount")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Brand")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CoNo")
+                    b.Property<int?>("CoNo")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DeadLine")
                         .HasColumnType("datetime2");
+
+                    b.Property<int?>("DiscoveryNo")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ProjectId")
                         .HasColumnType("int");
@@ -171,7 +198,6 @@ namespace DiemPortal.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("SubContractor")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Unit")
@@ -181,7 +207,7 @@ namespace DiemPortal.Data.Migrations
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("Request", (string)null);
+                    b.ToTable("Request");
                 });
 
             modelBuilder.Entity("DiemPortal.Models.Supplier", b =>
@@ -198,7 +224,7 @@ namespace DiemPortal.Data.Migrations
 
                     b.HasKey("SupplierId");
 
-                    b.ToTable("Supplier", (string)null);
+                    b.ToTable("Supplier");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

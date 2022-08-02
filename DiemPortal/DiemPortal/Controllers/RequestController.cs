@@ -1,4 +1,5 @@
 ﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -57,7 +58,7 @@ namespace DiemPortal.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("RequestId,RequestInfo,Unit,Amount,Brand,CoNo,DeadLine,SubContractor,RequestType,ProjectId")] Request request)
+        public async Task<IActionResult> Create([Bind("RequestId,RequestInfo,RequestType,Unit,Amount,Brand,CoNo,DiscoveryNo,DeadLine,SubContractor,ProjectId,Notes")] Request request)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +92,7 @@ namespace DiemPortal.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("RequestId,RequestInfo,Unit,Amount,Brand,CoNo,DeadLine,SubContractor,RequestType,ProjectId")] Request request)
+        public async Task<IActionResult> Edit(int id, [Bind("RequestId,RequestInfo,RequestType,Unit,Amount,Brand,CoNo,DiscoveryNo,DeadLine,SubContractor,ProjectId,Notes")] Request request)
         {
             if (id != request.RequestId)
             {

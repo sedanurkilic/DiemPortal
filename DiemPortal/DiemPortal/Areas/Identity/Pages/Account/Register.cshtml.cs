@@ -79,12 +79,15 @@ namespace DiemPortal.Areas.Identity.Pages.Account
             /// </summary>
             /// 
             [Display(Name = "İsim")]
+            [Required(ErrorMessage = "İsim Giriniz")]
             public string Name { get; set; }
+            [Required(ErrorMessage = "Soy İsim Giriniz")]
             [Display(Name = "Soy İsim")]
             public string Surname { get; set; }
 
-            [Required]
+            [Required(ErrorMessage ="E Posta Adresi Giriniz")]
             [EmailAddress]
+
             [Display(Name = "E-Posta")]
             [RegularExpression(@"^[a-zA-Z0-9._%+-]+(@diem\.com\.tr|@diem\.com)$", ErrorMessage = "Yalnızca diem uzantılı mail ile kayıt olunabilir.")]
             public string Email { get; set; }
@@ -93,7 +96,7 @@ namespace DiemPortal.Areas.Identity.Pages.Account
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Required]
+            [Required (ErrorMessage ="Şifrenizi Giriniz")]
             [StringLength(100, ErrorMessage = "Şifre en az 6 hane olmalıdır", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "Şifre")]

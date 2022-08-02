@@ -13,11 +13,10 @@
 		<form asp-action="Edit">
 			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
 			<input type="hidden" asp-for="RequestId" />
-
 			<div class="form-group">
-				<label asp-for="ProjectId" class="control-label">Proje</label>
-				<select asp-for="ProjectId" class="form-control" asp-items="ViewBag.ProjectId"></select>
-				<span asp-validation-for="ProjectId" class="text-danger"></span>
+				<label asp-for="RequestInfo" class="control-label"></label>
+				<input asp-for="RequestInfo" class="form-control" />
+				<span asp-validation-for="RequestInfo" class="text-danger"></span>
 			</div>
 			<div class="form-group">
 				<label asp-for="RequestType" class="control-label"></label>
@@ -26,11 +25,7 @@
 				</select>
 				<span asp-validation-for="RequestType" class="text-danger"></span>
 			</div>
-			<div class="form-group">
-				<label asp-for="RequestInfo" class="control-label"></label>
-				<input asp-for="RequestInfo" class="form-control" />
-				<span asp-validation-for="RequestInfo" class="text-danger"></span>
-			</div>
+
 			<div class="form-group">
 				<label asp-for="Unit" class="control-label"></label>
 				<input asp-for="Unit" class="form-control" />
@@ -52,6 +47,11 @@
 				<span asp-validation-for="CoNo" class="text-danger"></span>
 			</div>
 			<div class="form-group">
+				<label asp-for="DiscoveryNo" class="control-label"></label>
+				<input asp-for="DiscoveryNo" class="form-control" />
+				<span asp-validation-for="DiscoveryNo" class="text-danger"></span>
+			</div>
+			<div class="form-group">
 				<label asp-for="DeadLine" class="control-label"></label>
 				<input asp-for="DeadLine" class="form-control" />
 				<span asp-validation-for="DeadLine" class="text-danger"></span>
@@ -61,8 +61,16 @@
 				<input asp-for="SubContractor" class="form-control" />
 				<span asp-validation-for="SubContractor" class="text-danger"></span>
 			</div>
-
-
+			<div class="form-group">
+				<label asp-for="ProjectId" class="control-label">Proje</label>
+				<select asp-for="ProjectId" class="form-control" asp-items="ViewBag.ProjectId"></select>
+				<span asp-validation-for="ProjectId" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Notes" class="control-label"></label>
+				<input asp-for="Notes" class="form-control" />
+				<span asp-validation-for="Notes" class="text-danger"></span>
+			</div>
 			<div class="form-group">
 				<input type="submit" value="Save" class="btn btn-primary" />
 			</div>

@@ -1,86 +1,95 @@
 ﻿@model IEnumerable<DiemPortal.Models.Request>
 
 @{
-	ViewData["Title"] = "Index";
+    ViewData["Title"] = "Index";
 }
 
 <h1>Index</h1>
 
 <p>
-	<a asp-action="Create">Create New</a>
+    <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
-	<thead>
-		<tr>
-			<th>
-				Proje
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.RequestType)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.RequestInfo)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.Unit)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.Amount)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.Brand)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.CoNo)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.DeadLine)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.SubContractor)
-			</th>
-
-			<th></th>
-		</tr>
-	</thead>
-	<tbody>
-		@foreach (var item in Model)
-		{
-			<tr>
-				<td>
-					@Html.DisplayFor(modelItem => item.project.ProjectName)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.RequestType)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.RequestInfo)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.Unit)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.Amount)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.Brand)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.CoNo)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.DeadLine)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.SubContractor)
-				</td>
-				
-				<td>
-					<a asp-action="Edit" asp-route-id="@item.RequestId">Edit</a> |
-					<a asp-action="Details" asp-route-id="@item.RequestId">Details</a> |
-					<a asp-action="Delete" asp-route-id="@item.RequestId">Delete</a>
-				</td>
-			</tr>
-		}
-	</tbody>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RequestInfo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RequestType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Unit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Brand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CoNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiscoveryNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeadLine)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SubContractor)
+            </th>
+            <th>
+                Proje
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notes)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestInfo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Unit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CoNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiscoveryNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeadLine)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubContractor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.project.ProjectName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.RequestId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.RequestId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.RequestId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
 </table>
