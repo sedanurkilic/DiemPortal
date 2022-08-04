@@ -218,9 +218,28 @@ namespace DiemPortal.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SupplierId"), 1L, 1);
 
-                    b.Property<string>("Name")
+                    b.Property<int?>("IbanEur")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("IbanTr")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("IbanUsd")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SuplierAddress")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SupplierName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("TaxAdministration")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TaxNo")
+                        .HasColumnType("int");
 
                     b.HasKey("SupplierId");
 
